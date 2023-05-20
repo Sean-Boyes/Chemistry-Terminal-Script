@@ -3,38 +3,39 @@ from Chem_Numbers import *
 import P_Table
 
 # To-Do
-# maybe replace none with 'x' to be less confusing and more straightforward
 # need recursive check
 
 # ~Chem Equations~ #
 
 def get_pressure() -> (int):
-    if (variable.volume == None):
+    if (volume.value == None):
         # get volume function
         return 0
-    if (variable.n == None):
+    if (n.value == None):
         # get mole function
         return 0
-    if (variable.temp == None):
+    if (temp.value == None):
         # get temp function
         return 0
     # Run when all variables need are acquired 
-    if (variable.temp != None) and (variable.n != None) and (variable.volume != None):
-        return ( (variable.n * R_atm * variable.temp) / (variable.volume) ) # temp is in kelvin*
+    if (temp.value != None) and (n.value != None) and (volume.value != None):
+        return ( (n.value * R_atm * temp.value) / (volume.value) ) # temp is in kelvin*
 
 def get_volume() -> (int):
-    if (variable.density == None):
+    if (density.value == None):
         # get density function
         return 0
-    if (variable.mass == None):
+    if (mass.value == None):
         # get mass function
         return 0
-    if (variable.temp == None):
+    if (mass.value != None and density.value != None):
+        return int(mass.value) / int(density.value)
+    if (temp.value == None):
         # get temp function
         return 0
-    if (variable.n == None):
+    if (n.value == None):
         # get n function
         return 0 
-    if (variable.pressure == None):
+    if (pressure.value == None):
         get_pressure()
     
