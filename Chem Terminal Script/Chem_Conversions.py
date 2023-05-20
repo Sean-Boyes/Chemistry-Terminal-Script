@@ -1,4 +1,5 @@
 # ~Chem Conversions~ #
+import Chem_Numbers
 
 # Pressure 
 def pressureConvert(pressure, type):
