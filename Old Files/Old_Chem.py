@@ -178,7 +178,7 @@ while 1 == 1:
             n = (float(P1)*float(V1))/(float(atmcon)*float(T1))
             print("n = " + str(n) + " mol")
         if str(T1) == "x":
-            T = (float(P1)*float(V1))/(float(atmcon)*float(R))
+            T = (float(P1)*float(V1))/(float(atmcon)*float(R1))
             print("T = " + str(T1) + " K")
     elif problem == "3":
         R1 = input("R1 = ")
