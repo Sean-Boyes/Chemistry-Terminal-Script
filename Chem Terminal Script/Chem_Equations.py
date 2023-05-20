@@ -1,5 +1,5 @@
 # Importing library
-import Chem_Constants
+from Chem_Numbers import *
 import P_Table
 
 # To-Do
@@ -8,33 +8,33 @@ import P_Table
 
 # ~Chem Equations~ #
 
-def getPressure(volume = None,n = None, temp = None):
-    if (volume == None):
+def get_pressure() -> (int):
+    if (variable.volume == None):
         # get volume function
         return 0
-    if (n == None):
+    if (variable.n == None):
         # get mole function
         return 0
-    if (temp == None):
+    if (variable.temp == None):
         # get temp function
         return 0
     # Run when all variables need are acquired 
-    if (temp != None) and (n != None) and (volume != None):
-        return ( (n * Chem_Constants.R_atm * temp) / (volume) ) # temp is in kelvin*
+    if (variable.temp != None) and (variable.n != None) and (variable.volume != None):
+        return ( (variable.n * R_atm * variable.temp) / (variable.volume) ) # temp is in kelvin*
 
-def getVolume(density = None, mass = None, temp = None, n = None, pressure = None):
-    if (density == None):
+def get_volume() -> (int):
+    if (variable.density == None):
         # get density function
         return 0
-    if (mass == None):
+    if (variable.mass == None):
         # get mass function
         return 0
-    if (temp == None):
+    if (variable.temp == None):
         # get temp function
         return 0
-    if (n == None):
+    if (variable.n == None):
         # get n function
         return 0 
-    if (pressure == None):
-        getPressure()
+    if (variable.pressure == None):
+        get_pressure()
     
