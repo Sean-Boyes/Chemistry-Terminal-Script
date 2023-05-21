@@ -2,8 +2,8 @@
 import Chem_Numbers
 
 # Pressure 
-def pressureConvert(pressure, type):
-    match type:
+def pressure_Convert(pressure, unit):
+    match unit:
         case "atm":
             return pressure
         case "kPa":
@@ -13,12 +13,12 @@ def pressureConvert(pressure, type):
         case "psi":
             return (pressure / 14.1)
         case _:
-            print("Not a valid pressure type")
+            print("Not a valid pressure unit")
             return False
         
 # Temperature
-def tempCovert(temp, type):
-    match type:
+def temp_Covert(temp, unit):
+    match unit:
         case "K":
             return temp
         case "C":
@@ -30,8 +30,8 @@ def tempCovert(temp, type):
             return False
         
 # Volume
-def volumeConvert(volume, type):
-    match type:
+def volume_Convert(volume, unit):
+    match unit:
         case "L":
             return volume
         case "mL":

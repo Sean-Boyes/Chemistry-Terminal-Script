@@ -33,20 +33,26 @@ def command_handler(command):
         case _:
             print("Error: Command not Found")
         
-def variable_handler(variable, value):
+def variable_handler(variable, value, unit):
     match variable:
         case "v":
             volume.value = value
+            volume.unit = unit
         case "n":
             n.value = value
+            n.unit = unit
         case "t":
-            temp.value = value
+            temp.value = 
+            temp.unit = unit
         case "d":
             density.value = value
+            density.unit = unit
         case "m":
             mass.value = value
+            mass.unit = unit
         case "p":
             pressure.value = value
+            pressure.unit = unit
         case _:
             print("Error: variable %s not found", variable)
     
@@ -64,9 +70,10 @@ def message_handeler(userInput):
         
         # There has to be a better way...
         while len(userInput) > 0:
-            variable_handler(userInput[0],userInput[1])
+            variable_handler(userInput[0],userInput[1],userInput[2])
             userInput.pop(0)
-            userInput.pop(0)      
+            userInput.pop(0)
+            userInput.pop(0)
         
         get_pressure()
         print(pressure.value)

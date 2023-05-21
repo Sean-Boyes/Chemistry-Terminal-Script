@@ -1,8 +1,8 @@
 # Variable Class
 class variable:
-    def __init__(self, value = None, type = None, iteration = None):
+    def __init__(self, value = None, unit = None, iteration = None):
         self.value = value
-        self.type = type
+        self.unit = unit
         self.iteration = iteration
 
 # Initalize Variable Objects
