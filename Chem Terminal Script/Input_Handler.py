@@ -1,6 +1,7 @@
 # import lib
 from Chem_Numbers import *
 from Chem_Equations import *
+import os
 
 def get_input()->str:
     return input(">")
@@ -8,16 +9,29 @@ def get_input()->str:
 def command_handler(command):
     match command:
         case 'exit' | 'e':
-            print("exiting...")
+            print("\nexiting...")
             quit()
+            return
         case 'help' | 'h':
-            message = "commands: \n"
+            message = "\ncommands: \n"
             message += "<exit> or <e> : exits program \n"
             message += "<help> or <h> : shows command list \n"
+            message += "<variables> or <v> : shows variables \n"
             print(message)
+            return
+        case 'variables' | 'v':
+            message = "\nVariables used are as follows: \n"
+            message += "volume (v) \n"
+            message += "moles (n) \n"
+            message += "temp (t) \n"
+            message += "density (d) \n"
+            message += "mass (m) \n"
+            message += "pressure (p) \n"
+            message += "\nThe syntax is as follows: <variable> = <value> <units> \n"
+            print(message)
+            return
         case _:
             print("Error: Command not Found")
-            return
         
 def variable_handler(variable, value):
     match variable:
