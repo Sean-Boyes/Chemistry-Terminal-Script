@@ -10,16 +10,18 @@ import P_Table
 def get_pressure() -> (int):
     if (volume.value == None):
         # get volume function
-        return 0
+        get_volume()
     if (n.value == None):
         # get mole function
+        print("need 'n' variable")
         return 0
     if (temp.value == None):
         # get temp function
+        print("need 't' variable")
         return 0
     # Run when all variables need are acquired 
     if (temp.value != None) and (n.value != None) and (volume.value != None):
-        return ( (n.value * R_atm * temp.value) / (volume.value) ) # temp is in kelvin*
+        pressure.value = ( (float(n.value) * R_atm * float(temp.value)) / (float(volume.value)) ) # temp is in kelvin*
 
 def get_volume() -> (int):
     if (density.value == None):
@@ -29,7 +31,8 @@ def get_volume() -> (int):
         # get mass function
         return 0
     if (mass.value != None and density.value != None):
-        return int(mass.value) / int(density.value)
+        volume.value = float(mass.value) / float(density.value)
+        return
     if (temp.value == None):
         # get temp function
         return 0
@@ -37,5 +40,5 @@ def get_volume() -> (int):
         # get n function
         return 0 
     if (pressure.value == None):
-        get_pressure()
+        pressure.value = get_pressure()
     
