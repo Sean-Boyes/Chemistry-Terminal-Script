@@ -42,7 +42,7 @@ def variable_handler(variable, value, unit):
             n.value = value
             n.unit = unit
         case "t":
-            temp.value = 
+            temp.value = value
             temp.unit = unit
         case "d":
             density.value = value
